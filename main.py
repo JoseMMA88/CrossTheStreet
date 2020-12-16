@@ -4,6 +4,10 @@ from scoreboard import Scoreboard
 from car_manager import CarManager
 import time
 
+
+lvl = 5
+
+
 def game(lvl):
     # Screen Setup
     screen = Screen()
@@ -40,12 +44,11 @@ def game(lvl):
             game(lvl)
 
         for car in car_manager.cars_list:
-            if player.distance(car) < 30:
+            if player.distance(car) < 20:
                 scoreboard.game_over()
                 is_game = False
 
-
     screen.exitonclick()
 
-lvl = 5
+
 game(lvl)
